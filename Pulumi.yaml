@@ -1,0 +1,6 @@
+name: langgraph-agent
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: LangGraph ReAct Agent on AWS Bedrock AgentCore

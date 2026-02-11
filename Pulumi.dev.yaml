@@ -1,0 +1,11 @@
+config:
+  aws-native:region: us-east-1
+  langgraph-agent:knowledgeBaseStackOutputs:
+    PetCare2ndKnowledgeBaseId: KB-MOCK-PETCARE
+    PetStoreGuardrailId: GR-MOCK
+    PetStoreGuardrailVersion: "1"
+    PetStoreInventoryManagement1stFunction: pet-store-inventory
+    PetStoreUserManagement2ndFunction: pet-store-user
+    ProductInfo1stKnowledgeBaseId: KB-MOCK-PRODUCT
+    SolutionAccessRoleArn: arn:aws:iam::052848974346:role/TestRole
+  aws:region: us-east-1
