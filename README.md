@@ -13,10 +13,13 @@ aws cloudformation create-stack \
 
 # 2. Sync Knowledge Bases in AWS Console (Bedrock → Knowledge Bases)
 
-# 3. Configure and deploy
-./deploy.sh
-# OR
-python setup_config.py pet-store-kb
+# 3. Install dependencies with UV
+uv sync
+
+# 4. Configure Pulumi with CloudFormation outputs
+uv run python setup_config.py pet-store-kb
+
+# 5. Deploy infrastructure
 pulumi up
 ```
 
@@ -30,14 +33,16 @@ pulumi up
 
 - AWS CLI configured
 - Python 3.12+
+- [UV](https://docs.astral.sh/uv/) package manager
 - Pulumi CLI
+- Docker (for building agent image)
 - CloudFormation stack with Knowledge Bases (synced)
 - Lambda functions deployed
 - Guardrails configured
 
 ## Configuration
 
-Edit `Pulumi.dev.yaml` or run `python setup_config.py <stack-name>`:
+Edit `Pulumi.dev.yaml` or run `uv run python setup_config.py <stack-name>`:
 
 ```yaml
 config:
